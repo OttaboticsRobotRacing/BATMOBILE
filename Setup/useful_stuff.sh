@@ -9,8 +9,11 @@ if [ ! -a ~/.inputrc ]; then echo '$include /etc/inputrc' > ~/.inputrc; fi
 echo 'set completion-ignore-case On' >> ~/.inputrc
 
 # install imagemagick
-sudo apt-get -y install imagemagick
+# sudo apt-get -y install imagemagick
 
 # install git and gitg
-sudo apt-get install git
-sudo apt-get install gitg
+sudo apt-get -y install git
+sudo apt-get -y install gitg
+
+# install meld
+sudo apt-get -y install meld
