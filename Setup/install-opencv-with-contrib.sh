@@ -1,3 +1,10 @@
+#!/bin/bash
+# OpenCV library installer
+
+# SET OPENCV VERSION
+
+OPENCV_VERSION=3.3.0
+
 # KEEP UBUNTU OR DEBIAN UP TO DATE
 
 sudo apt-get -y update
@@ -33,16 +40,13 @@ sudo apt-get install -y ant default-jdk
 sudo apt-get install -y doxygen
 
 
-# INSTALL THE LIBRARY (YOU CAN CHANGE '3.2.0' FOR THE LAST STABLE VERSION)
+# INSTALL THE LIBRARY
 
 sudo apt-get install -y unzip wget
-wget -O OpenCV.zip https://github.com/opencv/opencv/archive/3.2.0.zip
-wget -O OpenCV-contrib.zip https://github.com/opencv/opencv_contrib/archive/3.2.0.zip
-unzip OpenCV.zip
-unzip OpenCV-contrib.zip
-#rm 3.1.0.zip
-mv opencv-3.2.0 OpenCV
-mv opencv_contrib-3.2.0 OpenCV-contrib
+wget -O OpenCV.zip https://github.com/opencv/opencv/archive/${OPENCV_VERSION}.zip
+wget -O OpenCV-contrib.zip https://github.com/opencv/opencv_contrib/archive/${OPENCV_VERSION}.zip
+unzip OpenCV.zip -d OpenCV
+unzip OpenCV-contrib.zip -d OpenCV-contrib
 cd OpenCV
 mkdir build
 cd build
