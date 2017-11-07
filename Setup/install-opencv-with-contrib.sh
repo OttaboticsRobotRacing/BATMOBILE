@@ -45,8 +45,10 @@ sudo apt-get install -y doxygen
 sudo apt-get install -y unzip wget
 wget -O OpenCV.zip https://github.com/opencv/opencv/archive/${OPENCV_VERSION}.zip
 wget -O OpenCV-contrib.zip https://github.com/opencv/opencv_contrib/archive/${OPENCV_VERSION}.zip
-unzip OpenCV.zip -d OpenCV
-unzip OpenCV-contrib.zip -d OpenCV-contrib
+unzip OpenCV.zip
+unzip OpenCV-contrib.zip
+mv opencv-${OPENCV_VERSION} OpenCV
+mv opencv_contrib-${OPENCV_VERSION} OpenCV-contrib
 cd OpenCV
 mkdir build
 cd build
